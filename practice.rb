@@ -17,13 +17,79 @@ blockchain = [
   { "from_user" => "anthony", "to_user" => "evan", "amount" => 1750 }
 ]
 
+
+
+
 # Write code below that returns the number of KelloggCoin that each user has in their 
 # KelloggCoin "wallet".
 
+users = ["ben","brian","evan","anthony"]
+# lists = [1,2,3,4]
+
+# for user in users
+#   puts user
+#   for list in lists
+#     puts "#{user} #{list}"
+#   end
+# end
+
+
 # It should print out:
 # Ben's KelloggCoin balance is 14000
+
+for user in users
+  amount = 0
+  for block in blockchain
+    if block["to_user"] == user
+      amount = amount + block["amount"]
+    end
+    if block["from_user"] == user
+      amount = amount - block["amount"]
+    end
+  end
+   puts "#{user.capitalize}'s KelloggCoin balance is #{amount}"
+end
+
+
+
+# index = index + 1
+# puts "outer loop #{index}"
+# puts "Ben's KelloggCoin balance is #{ben}"
+# end
+
+# for blockchain in blockchain
+# puts blockchain["to_user"]
+# end
+
+
 # Brian's KelloggCoin balance is 13000
+# brian = 0
+# index = 0
+# loop do
+#   if index == blockchain.length
+#     break
+#   end
+#   if blockchain[index]["to_user"] == "brian"
+#     brian = brian + blockchain[index]["amount"]
+#     puts "Brian's KelloggCoin balance is #{brian}"
+#   end
+#   if blockchain[index]["from_user"] =='brian'
+#     brian = brian - blockchain[index]["amount"]
+    
+#   end
+  
+#   index = index + 1
+#   puts "outer loop #{index}"
+#   puts "Brian's KelloggCoin balance is #{brian}"
+  # end
+
 # Evan's KelloggCoin balance is 10350
+
+
 # Anthony's KelloggCoin balance is 2650
+
+
+
+
 
 # 👇👇👇 Your code HERE 👇👇👇
